@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header>
+      <h1>LinkedIn Feed Filter</h1>
+      <label class="switch"><input type="checkbox" id="enabled" /> On</label>
+    </header>
+
+    <section id="stats">Open your LinkedIn feed to see stats.</section>
+
+    <section>
+      <h2>Display</h2>
+      <label>
+        Hidden posts
+        <select id="hideMode">
+          <option value="collapse">Collapse to a bar</option>
+          <option value="remove">Remove completely</option>
+        </select>
+      </label>
+      <label class="row"><input type="checkbox" id="hidePromoted" /> Hide promoted posts</label>
+      <label class="row"><input type="checkbox" id="showBadges" /> Label kept posts</label>
+    </section>
+
+    <section>
+      <h2>Gemini Nano (on-device)</h2>
+      <label class="row"><input type="checkbox" id="useNano" /> Use for unclear posts</label>
+      <p id="nanoStatus" class="muted">Checking…</p>
+      <button id="nanoDownload" hidden>Download model</button>
+    </section>
+
+    <section>
+      <h2>Groq fallback (free tier)</h2>
+      <label>API key <input type="password" id="groqKey" placeholder="gsk_…" autocomplete="off" /></label>
+      <label>Model <input type="text" id="groqModel" /></label>
+    </section>
+
+    <section>
+      <h2>If no AI is available</h2>
+      <label>
+        Undecided posts
+        <select id="ambiguousPolicy">
+          <option value="keep">Show them</option>
+          <option value="hide">Hide them</option>
+        </select>
+      </label>
+    </section>
+
+    <footer>
+      <button id="clearCache">Clear AI cache</button>
+    </footer>
+
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "LinkedIn Feed Filter",
+  "version": "0.1.0",
+  "description": "Hides LinkedIn feed posts that aren't opportunities, offers, or event announcements.",
+  "minimum_chrome_version": "138",
+  "permissions": ["storage", "offscreen"],
+  "host_permissions": ["https://api.groq.com/*"],
+  "background": {
+    "service_worker": "src/background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.linkedin.com/*"],
+      "js": ["src/content/keywords.js", "src/content/selectors.js", "src/content/content.js"],
+      "css": ["src/content/content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "src/popup/popup.html",
+    "default_title": "LinkedIn Feed Filter"
+  }
+}

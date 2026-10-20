@@ -1,0 +1,67 @@
+body {
+  width: 300px;
+  margin: 0;
+  padding: 12px;
+  font: 13px/1.4 system-ui, sans-serif;
+  color: #222;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
+  font-size: 15px;
+  margin: 0;
+}
+
+h2 {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #666;
+  margin: 0 0 6px;
+}
+
+section {
+  border-top: 1px solid #eee;
+  padding: 10px 0;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+}
+
+label.row,
+label.switch {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+input[type="text"],
+input[type="password"],
+select {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 2px;
+  padding: 4px 6px;
+}
+
+.muted {
+  color: #666;
+  margin: 4px 0;
+}
+
+#stats {
+  color: #444;
+}
+
+button {
+  padding: 4px 10px;
+  cursor: pointer;
+}

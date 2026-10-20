@@ -1,0 +1,7 @@
+{
+  "name": "linkedin-feed-filter",
+  "private": true,
+  "scripts": {
+    "test": "node --test tests/keywords.test.js"
+  }
+}

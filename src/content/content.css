@@ -1,0 +1,44 @@
+html:not([data-lif-off]) [data-lif-state="hidden"] > :not(.lif-bar),
+html:not([data-lif-off]) [data-lif-state="pending"] > :not(.lif-bar) {
+  display: none !important;
+}
+
+html[data-lif-mode="remove"]:not([data-lif-off]) [data-lif-state="hidden"] {
+  display: none !important;
+}
+
+html[data-lif-off] .lif-bar,
+html:not([data-lif-badges]) [data-lif-state="kept"] > .lif-bar {
+  display: none !important;
+}
+
+.lif-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 6px 12px;
+  font: 12px/1.4 -apple-system, system-ui, sans-serif;
+  color: #666;
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 8px;
+}
+
+[data-lif-state="kept"] > .lif-bar {
+  color: #057642;
+  background: rgba(5, 118, 66, 0.06);
+}
+
+.lif-bar button {
+  border: 1px solid #0a66c2;
+  color: #0a66c2;
+  background: transparent;
+  border-radius: 12px;
+  padding: 1px 10px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.lif-bar button:hover {
+  background: rgba(10, 102, 194, 0.08);
+}
